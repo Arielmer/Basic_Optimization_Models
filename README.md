@@ -1,53 +1,76 @@
-# Basic Optimization Models
+# 📌 Basic Optimization Models
 
-This repository contains three optimization models implemented using Pyomo and solved with Gurobi. These models illustrate key problem-solving approaches in management science and operations research, tackling challenges related to resource allocation, supply chain management, and transportation logistics. They demonstrate how mathematical modeling and optimization techniques can aid in decision-making to maximize efficiency, minimize costs, and meet resource constraints.
+Welcome to the **Basic Optimization Models** repository! This project features three mathematical optimization models designed to tackle **resource allocation, supply chain management, and transportation logistics**. These models are implemented using **Pyomo** and solved with **Gurobi**, demonstrating how mathematical programming can be applied to real-world decision-making problems. 🚀
 
-### Problem Contexts
+---
 
-1. **Resource Allocation Optimization**: A farmer owns 60 acres of land and must decide how to divide it between wheat and corn to maximize profit, given constraints on land, labor, and fertilizer.
-2. **Production and Supply Chain Optimization**: A paper recycling company must determine the least costly way of converting mixed paper, office paper, and cardboard into different types of pulp while meeting demand constraints.
-3. **Transportation and Logistics Optimization**: A coal mining company operates two mines that produce different coal grades. The company must determine the optimal number of operating hours per mine to fulfill demand at the lowest cost.
+## 📊 Problem Contexts
 
-These models are valuable for decision-makers in agriculture, manufacturing, supply chain management, and logistics.
+### 1️⃣ Resource Allocation Optimization 🌱
+A farmer has **60 acres of land** and must decide how to divide it between wheat and corn to **maximize profit**, considering constraints on **land availability, labor hours, and fertilizer usage**.
 
-## Models
+### 2️⃣ Production & Supply Chain Optimization ♻️
+A **paper recycling company** needs to **minimize costs** while converting **mixed paper, white office paper, and cardboard** into different types of **paper pulp**. The challenge is to efficiently allocate raw materials while ensuring demand is met.
 
-### 1. Resource Allocation Optimization
+### 3️⃣ Transportation & Logistics Optimization 🚛
+A **coal mining company** operates two mines that produce different grades of coal. The company must determine the **optimal number of operating hours per mine** to **meet demand at the lowest cost**.
+
+These models provide practical decision-making insights for **agriculture, manufacturing, supply chain management, and logistics**. 📦
+
+---
+
+## 🏷 Methodology
+
+### 1️⃣ Resource Allocation Optimization
 **Filename:** `resource_allocation_optimization.py`
-
-**Problem Statement:** A farmer has 60 acres of land to allocate between wheat and corn. Each crop has different yields, fertilizer usage, and labor requirements. The goal is to maximize profit while ensuring that total land, labor, and fertilizer constraints are not exceeded.
-
+- **Goal:** Maximize profit from wheat and corn production.
+- **Constraints:**
+  - **Land Usage**: Cannot exceed 60 acres.
+  - **Labor Availability**: Wheat requires 3 hours/acre, corn requires 2 hours/acre, total available is 100 hours.
+  - **Fertilizer Limitations**: Wheat needs 2 tons/acre, corn needs 4 tons/acre, total available is 120 tons.
 - **Techniques Used:** Linear Programming (LP)
-- **Concepts:** Resource Allocation, Optimization in Agriculture
 
----
-
-### 2. Production and Supply Chain Optimization
+### 2️⃣ Production & Supply Chain Optimization
 **Filename:** `recycling_optimization.py`
-
-**Problem Statement:** A paper recycling company converts raw materials into different types of pulp. Given the purchase costs, processing costs, and recycling yields, the company must determine the least costly way of meeting the required demand for newsprint, packaging, and print stock quality pulp.
-
+- **Goal:** Minimize total costs while ensuring sufficient production of paper pulp.
+- **Constraints:**
+  - **Raw Material Processing Costs & Purchase Costs**.
+  - **Yield Ratios for Mixed Paper, White Office Paper, and Cardboard**.
+  - **Meeting Demand for Newsprint, Packaging Paper, and Print Stock**.
 - **Techniques Used:** Mixed-Integer Linear Programming (MILP)
-- **Concepts:** Supply Chain Optimization, Production Planning, Cost Minimization
+
+### 3️⃣ Transportation & Logistics Optimization
+**Filename:** `coal_transportation_optimization.py`
+- **Goal:** Minimize the operational costs of coal mining while meeting demand for different grades of coal.
+- **Constraints:**
+  - **Mine 1 and Mine 2 Production Rates**.
+  - **Hourly Operational Costs** ($200/hour for Mine 1, $160/hour for Mine 2).
+  - **Meeting Demand for High, Medium, and Low-Grade Coal**.
+- **Techniques Used:** Linear Programming (LP), Network Flow Optimization
 
 ---
 
-### 3. Transportation and Logistics Optimization
-**Filename:** `coal_transportation_optimization.py`
+## 🛠 Technologies Used
+- **Python** 🐍
+  - `pyomo` for mathematical modeling
+  - `gurobipy` as the solver
 
-**Problem Statement:** A mining company operates two mines that produce different coal grades at different rates. Each mine has an associated operating cost. The company needs to fulfill demand for each grade while minimizing operational costs by determining how many hours each mine should be operated per day.
+---
 
-- **Techniques Used:** Linear Programming (LP), Network Flow Optimization
-- **Concepts:** Transportation and Logistics, Supply Chain Management
+## 📂 Repository Files
+- **`resource_allocation_optimization.py`** – Crop selection problem.
+- **`recycling_optimization.py`** – Paper recycling cost minimization.
+- **`coal_transportation_optimization.py`** – Coal mining operational cost reduction.
+- **`README.md`** – Project documentation.
 
-## Dependencies
+---
+
+## 🚀 Running the Models
 Ensure you have the required dependencies installed:
 ```sh
 pip install pyomo gurobipy
 ```
-
-## Running the Models
-Each script can be executed individually using Python. For example:
+Run each script individually:
 ```sh
 python resource_allocation_optimization.py
 ```
